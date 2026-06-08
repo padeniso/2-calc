@@ -17,9 +17,11 @@ func main() {
 
 	// fmt.Println()("Длинна: ",len(arr),"Вместимость: ", cap(arr))
 
-	myArr := make([]int, 5, 10)
+	// myArr := make([]int, 5, 10)
 
-	fmt.Println(myArr[0])
+	// fmt.Println(myArr[0])
+	operType := operType()
+	fmt.Printf("Выбранный тип операции: %s\n", operType)
 
 }
 
@@ -30,10 +32,17 @@ func scanTransaction() float64 {
 	return transaction
 }
 
-func banlanceCalculation(transactions []float64) (balance float64) {
-	balance = 0.0
-	for _, value := range transactions {
-		balance += value
+// operType function read a user input and return desired operation type
+func operType() (operType string) {
+	for {
+		fmt.Print("Введите тип операции AVG/SUM/MED:")
+		fmt.Scan(&operType)
+		if operType == "AVG" || operType == "SUM" || operType == "MED" {
+			break
+		} else {
+			fmt.Println("Ошибка при выборе типа операции")
+			fmt.Println("Повторите свой выбор")
+		}
 	}
-	return balance
+	return operType
 }
