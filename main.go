@@ -105,19 +105,6 @@ func stringToSlice(stringToTransform string) ([]int, error) {
 
 	return intSlice, nil
 
-	// elements := strings.Split(stringToTransform, ",")
-	// intSlice = make([]int, len(elements))
-	// for i, elem := range elements {
-	// 	// Trim spaces if the string might look like "5, 12, 67"
-	// 	trimmed := strings.TrimSpace(elem)
-	// 	num, err := strconv.Atoi(trimmed)
-	// 	if err != nil {
-	// 		fmt.Println("Ошибка преобразования:", err)
-	// 		return
-	// 	}
-	// 	intSlice[i] = num
-	// }
-	// return intSlice
 }
 
 // calculateAVG function gets a slice of integer numbers and calculate an average for the slice
